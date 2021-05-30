@@ -12,15 +12,15 @@ spec:
       labels:
         app: auth
     spec:
-      containers: 
+      containers:
         - name: auth
-          image: skycrazyk/ti_auth
+          image: skycrazyk/ti_auth 
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: auth-srv
-spec: 
+spec:
   selector:
     app: auth
   ports:
