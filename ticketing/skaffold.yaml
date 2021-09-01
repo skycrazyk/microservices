@@ -5,10 +5,12 @@ deploy:
         manifests:
             - ./infra/k8s/*
 build:
-    local:
-        push: false
+    # local:
+    #     push: false
+    googleCloudBuild:
+        projectId: bubbly-poetry-324612
     artifacts:
-        - image: skycrazyk/t_auth
+        - image: us.gcr.io/bubbly-poetry-324612/auth
           context: auth
           docker:
               dockerfile: Dockerfile
