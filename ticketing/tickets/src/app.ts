@@ -5,6 +5,7 @@ import cookieSession from 'cookie-session'
 import { errorHandler, NotFoundError } from '@skycrazyk/gittix'
 import { createTicketRouter } from './routes/new'
 import { currentUser } from '@skycrazyk/gittix'
+import { showTicketRouter } from './routes/show'
 
 export const app = express()
 
@@ -19,6 +20,7 @@ app.use(
 app.use(currentUser)
 
 app.use(createTicketRouter)
+app.use(showTicketRouter)
 
 app.all('*', async () => {
     throw new NotFoundError()
