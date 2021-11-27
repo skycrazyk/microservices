@@ -58,7 +58,7 @@ ticketSchema.statics.build = ({ id, ...attrs }: TicketAttrs) => {
 ticketSchema.statics.findByEvent = (event: { id: string; version: number }) => {
     return Ticket.findOne({
         _id: event.id,
-        version: event.version,
+        version: event.version - 1,
     })
 }
 
