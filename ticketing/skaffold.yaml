@@ -43,3 +43,11 @@ build:
               manual:
                   - src: 'src/**/*.ts'
                     dest: .
+        - image: skycrazyk/t_expiration
+          context: expiration
+          docker:
+              dockerfile: Dockerfile
+          sync:
+              manual:
+                  - src: 'src/**/*.ts'
+                    dest: .
