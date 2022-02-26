@@ -62,3 +62,7 @@ global.signin = () => {
     // return a string thats the cokie with the encoded data
     return [`express:sess=${base64}`]
 }
+
+declare global {
+    var signin: () => string[]
+}
